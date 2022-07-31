@@ -21,14 +21,14 @@ double Rosenbrock(std::array<double, 2> u) {
     double y = u[1];
 
     double alpha = 10.0;
-    return (1 - x)*(1 - x) + alpha * ((y - (x*x)) *(y - (x*x)));
+    return (1 - x) * (1 - x) + alpha * ((y - (x * x)) * (y - (x * x)));
 }
 
 double Himmelblau(std::array<double, 2> u) {
     double x = u[0];
     double y = u[1];
 
-    return (x*x + y - 11) * (x*x + y - 11) + (x + y * y - 7) * (x + y * y - 7);
+    return (x * x + y - 11) * (x * x + y - 11) + (x + y * y - 7) * (x + y * y - 7);
 }
 
 double ThreeState(std::array<double, 3> u) {
@@ -36,7 +36,7 @@ double ThreeState(std::array<double, 3> u) {
     double y = u[1];
     double z = u[2];
 
-    return (x*x + y - 11) * (x*x + y - 11) + (x + y * y - 7) * (x + y * y - 7) + (z-1)*(z-1);
+    return (x * x + y - 11) * (x * x + y - 11) + (x + y * y - 7) * (x + y * y - 7) + (z - 1) * (z - 1);
 }
 
 TEST(NelderMead, Rosenbrock_Exact)
