@@ -3,6 +3,7 @@
 [![Build Status](https://github.com/onurae/optimization-algorithms/actions/workflows/ci.yml/badge.svg)](https://github.com/onurae/optimization-algorithms/actions/workflows/ci.yml)&nbsp;&nbsp;
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/onurae/optimization-algorithms/blob/main/LICENSE)
 
+A library of derivative-free optimization algorithms.
 - Golden Section
 - Adaptive Nelder-Mead
 - Particle Swarm
@@ -56,10 +57,32 @@ double Himmelblau(std::array<double, 2> u) {
 }
 ```
 
+Create a two dimensional Nelder-Mead method.
+```cpp
+NelderMead<2> nm(Himmelblau);
+```
+Set configuration parameters.
+- Length of edges of the initial simplex
+- Maximum iteration number
+- Termination tolerance on f(x)
+- Termination tolerance on x
+
+```cpp
+nm.config.edge = 0.1;  // Length of edges of the initial simplex.
+nm.config.maxIter = 0; // Zero by default. It means no iteration limit.
+nm.config.fTol = 0.0;  // f(x) tolerance.
+nm.config.xTol = 1e-6; // x tolerance.
+```
+
 ### Particle Swarm
 
 It is an algorithm for finding optimal regions of complex search spaces through the interaction of individuals in a population of particles.
 [Read more](https://en.wikipedia.org/wiki/Particle_swarm_optimization)
+
+#### Reference
+Clerc, M. and Kennedy, J. (2002)<br>
+The Particle Swarm: Explosion, Stability, and Convergence in a Multi-Dimensional Complex Space.<br>
+IEEE Transactions on Evolutionary Computation, 6, 58-73.<br>
 
 #### Example
 
