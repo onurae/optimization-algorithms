@@ -33,7 +33,7 @@ private:
     struct Config
     {
         bool print{ false };        //!< Print switch.
-        double edge{ 0.1 };         //!< Edges of the initial simplex.
+        double edge{ 0.1 };         //!< Length of edges of the initial simplex.
         int maxIter{ 0 };           //!< Maximum number of iterations.
         double fTol{ 1e-4 };        //!< Termination tolerance on f(x).
         double xTol{ 1e-4 };        //!< Termination tolerance on x.
