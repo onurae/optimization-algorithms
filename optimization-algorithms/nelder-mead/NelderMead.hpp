@@ -110,7 +110,7 @@ inline std::array<double, dim> NelderMead<dim>::Solve(const std::array<double, d
         {
             if (config.print == true)
             {
-                std::cout << "Done." << std::endl << "Max.Iteration: " << std::to_string(iteration) << std::endl;
+                std::cout << "Done." << " [Max.Iteration]" << std::endl;
             }
             return points[0].position;
         }
@@ -141,7 +141,7 @@ inline std::array<double, dim> NelderMead<dim>::Solve(const std::array<double, d
         {
             if (config.print == true)
             {
-                std::cout << "Done." << std::endl << "Iteration: " << std::to_string(iteration) << std::endl;
+                std::cout << "Done." << " [Tolerance]" << std::endl;
             }
             return points[0].position;
         }

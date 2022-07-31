@@ -154,7 +154,7 @@ inline std::array<double, dim> ParticleSwarm<dim, nSwarm>::Solve()
         {
             if (config.print == true)
             {
-                std::cout << "Done." << std::endl << "Max.Iteration: " << std::to_string(iteration) << std::endl;
+                std::cout << "Done." << " [Max.Iteration]" << std::endl;
             }
             return globalBestPosition;
         }
@@ -164,8 +164,7 @@ inline std::array<double, dim> ParticleSwarm<dim, nSwarm>::Solve()
         {
             if (config.print == true)
             {
-                std::cout << "Done." << std::endl << "Cost threshold : " << "[" << globalBestCost << " <= " << config.costThreshold << "]"
-                    << std::endl << "Iteration: " << std::to_string(iteration) << std::endl;
+                std::cout << "Done." << " [Cost Threshold] " << "[" << globalBestCost << " <= " << config.costThreshold << "]" << std::endl;
             }
             return globalBestPosition;
         }
