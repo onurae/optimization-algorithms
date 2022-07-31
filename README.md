@@ -8,7 +8,7 @@ A library of derivative-free optimization algorithms.
 - Adaptive Nelder-Mead
 - Particle Swarm
 
-### Golden Section
+### 1. Golden Section
 
 It is a technique for finding a minimum of a one dimensional function inside a specified interval.
 [Read more](https://en.wikipedia.org/wiki/Golden-section_search)
@@ -33,7 +33,7 @@ double tolerance = 1e-4;
 double xResult = GoldenSectionSearch(Func, xBound1, xBound2, tolerance);
 ```
 
-### Adaptive Nelder-Mead
+### 2. Adaptive Nelder-Mead
 
 It is a heuristic search method used to find the minimum of an objective function in a multidimensional space. 
 [Read more](https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method)
@@ -52,7 +52,6 @@ It has four identical local minima.
 double Himmelblau(std::array<double, 2> u) {
     double x = u[0];
     double y = u[1];
-
     return (x * x + y - 11) * (x * x + y - 11) + (x + y * y - 7) * (x + y * y - 7);
 }
 ```
@@ -61,12 +60,12 @@ Create a two dimensional Nelder-Mead method.
 ```cpp
 NelderMead<2> nm(Himmelblau);
 ```
+
 Set configuration parameters.
 - Length of edges of the initial simplex
 - Maximum iteration number
 - Termination tolerance on f(x)
 - Termination tolerance on x
-
 ```cpp
 nm.config.edge = 0.1;  // Length of edges of the initial simplex.
 nm.config.maxIter = 0; // Zero by default. It means no iteration limit.
@@ -74,7 +73,18 @@ nm.config.fTol = 0.0;  // f(x) tolerance.
 nm.config.xTol = 1e-6; // x tolerance.
 ```
 
-### Particle Swarm
+Turn on the print option if needed.
+```cpp
+nm.config.print = true;
+```
+
+Set a start point and start the optimization.
+```cpp
+std::array<double, 2> xStart = { -6.0, -6.0 };
+std::array<double, 2> result = nm.Solve(xStart);
+```
+
+### 3. Particle Swarm
 
 It is an algorithm for finding optimal regions of complex search spaces through the interaction of individuals in a population of particles.
 [Read more](https://en.wikipedia.org/wiki/Particle_swarm_optimization)
@@ -102,6 +112,7 @@ Create a two dimensional swarm of 20 particles.
 ```cpp
 ParticleSwarm<2, 20> pso(Rosenbrock);
 ```
+
 Set configuration parameters.
 - Maximum iteration number
 - Cost threshold to stop iteration
@@ -114,8 +125,8 @@ pso.config.maxVel = 0.1;
 pso.config.varMin = -2.0;
 pso.config.varMax = 2.0;
 ```
-Turn on the print option if needed.
 
+Turn on the print option if needed.
 ```cpp
 pso.config.print = true;
 ```
