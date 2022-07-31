@@ -162,7 +162,7 @@ TEST(ParticleSwarm, Himmelblau_Minimas)
 
 TEST(ParticleSwarm, ThreeStateTest)
 {
-    ParticleSwarm<3, 5> pso(ThreeState);
+    ParticleSwarm<3, 10> pso(ThreeState);
     pso.config.maxIter = 10000;
     pso.config.costThreshold = 0;
     pso.config.varMax = 10.0;
