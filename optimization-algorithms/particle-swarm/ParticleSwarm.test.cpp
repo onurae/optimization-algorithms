@@ -16,7 +16,8 @@
 #include <gtest/gtest.h>
 #include "ParticleSwarm.hpp"
 
-double Rosenbrock(std::array<double,2> u) {
+double Rosenbrock(std::array<double,2> u)
+{
     double x = u[0];
     double y = u[1];
 
@@ -25,14 +26,16 @@ double Rosenbrock(std::array<double,2> u) {
     return (a - x) * (a - x) + b * ((y - (x * x)) * (y - (x * x)));
 }
 
-double Himmelblau(std::array<double, 2> u) {
+double Himmelblau(std::array<double, 2> u)
+{
     double x = u[0];
     double y = u[1];
 
     return (x * x + y - 11) * (x * x + y - 11) + (x + y * y - 7) * (x + y * y - 7);
 }
 
-double ThreeState(std::array<double, 3> u) {
+double ThreeState(std::array<double, 3> u)
+{
     double x = u[0];
     double y = u[1];
     double z = u[2];
