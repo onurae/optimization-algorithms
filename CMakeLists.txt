@@ -50,4 +50,6 @@ target_link_libraries(ParticleSwarm
 
 # Enable CMake’s test runner to discover the tests
 include(GoogleTest)
-gtest_discover_tests(GoldenSection NelderMead ParticleSwarm)
+gtest_discover_tests(GoldenSection)
+gtest_discover_tests(NelderMead)
+gtest_discover_tests(ParticleSwarm)
