@@ -49,7 +49,8 @@ Two dimensional [Himmelblau](https://en.wikipedia.org/wiki/Himmelblau%27s_functi
 It has four identical local minima.
 
 ```cpp
-double Himmelblau(std::array<double, 2> u) {
+double Himmelblau(std::array<double, 2> u)
+{
     double x = u[0];
     double y = u[1];
     return (x * x + y - 11) * (x * x + y - 11) + (x + y * y - 7) * (x + y * y - 7);
@@ -99,7 +100,8 @@ IEEE Transactions on Evolutionary Computation, 6, 58-73.<br>
 Two dimensional [Rosenbrock](https://en.wikipedia.org/wiki/Rosenbrock_function) objective function.
 The minimum is at [1,1] for this example.
 ```cpp
-double Rosenbrock(std::array<double,2> u) {
+double Rosenbrock(std::array<double,2> u)
+{
     double x = u[0];
     double y = u[1];
     double a = 1.0;
